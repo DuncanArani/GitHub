@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProfileServices } from '../prof/profile.services';
+import { GItHubSearch } from '../git-hub-search';
 
 @Component({
   selector: 'app-root',
@@ -6,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+profile: [
+  GItHubSearch
+];
 
-  constructor() { }
+  constructor(private_profileServices: ProfileServices) { }
 
   ngOnInit() {
   }
