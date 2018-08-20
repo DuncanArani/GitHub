@@ -1,27 +1,26 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { HttpClients, HttpHeaders} from '@angular/http';
+import { NgModule, } from '@angular/core';
+import { HttpModule } from '@angular/http';
+
+import {ProfileService} from './services/profile.service';
+
 import { AppComponent } from './app.component';
-import { ProfileComponent } from './profile/profile.component';
-import { ProfileServices } from './prof/profile.services';
-import { DataSearchPipe } from './data-search.pipe';
+import { ProfileComponent } from './components/profile/profile.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProfileComponent,
-    ProfileServices,
-    DataSearchPipe,
-    HttpClients,
-    HttpHeaders
+    ProfileComponent
   ],
 
   imports: [
     BrowserModule,
-   HttpClients,
-   HttpHeaders,
-  ],
-  providers: [ProfileServices],
+    HttpModule,
+
+
+],
+  providers: [ProfileService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,65 @@
+<!-- info from git hub -->
+<form action="">
+  <div class ="form-group">
+  <input type="text" class="form-control" placeholder="search github users with username">
+</div>
+<button type="search">Search</button>
+</form>
+<div *ngIf = "profile">
+  <div class = "container">
+  <div class ="panel-head">
+    {{profile.name}} <small>{{profile.login}}</small><span *ngIf="profile-company">, works at {{profile.company}}</span>
+  </div>
+<div class="panel-body">
+  <div class="row">
+    <div class="col-md-3">
+      <img src="{{profile.avator_url}}" class="img-circle img-responsive" alt="">
+    </div>
+    <div class="col-md-6">
+      <div class="list">
+        <li class="list-item" *ngIf="profile.bio">{{profile.bio}
+
+        </li>
+
+      
+
+        <!-- <li class="list-item" *ngIf="profile.hireable">{{profile.available for hire}}</li> -->
+
+        <li class="list-item" *ngIf="profile.blog"><a href="{{profile.blog}}" target="blank"{{profile.blog}} ></a></li>
+
+        <li class="list-item" *ngIf="profile.email"><a href="email to{{profile.email}}"{{profile.email}} ></a></li>
+      </div>
+      <div class="col-md-3">
+      <p>
+        <span class="label">{{profile.followers}} Followers  </span>
+        <span class="label">{{profile.following}} Following  </span>
+        <span class="label">{{profile.public_gists}} public gists  </span>
+        <span class="label">{{profile.Public_repo}} Public Repo  </span>
+      </p>
+      
+        <p><a href="{{profile.html}}" atrget ="blank"class="buttun">view github profile</a></p>
+        <div class="panel2">
+          <div class="panel-header">
+            <h3 class="panel-title">Repos</h3>
+          </div>
+          <!-- <div class="panel-body" *ngIf="let repo of repos"></div> -->
+        </div>
+        <p>
+{{repo.name}} <a href="{{repo.html_url}}"target="blank" class="btn">view prpofile on github</a>
+<p>{{repo.discription}}/p>
+      </p>
+    </div>
+    </div>
+  </div>
+</div>
+  </div>
+</div>
+<!-- <h1>My Profile</h1>
+<hr>
+
+<ul>
+    <div *ngFor='let profile of profile'>
+            <li  id="{{i}}" displayprofile>{{profile.form}}</li>
+        <app-profile-details [profile]='profile'></app-profile-details>
+    </div>
+</ul> -->
